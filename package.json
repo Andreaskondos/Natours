@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Learning Node.js , express and MongoDB",
   "scripts": {
-    "start": "node server.js",
+    "start": "npx node server.js",
     "dev": "nodemon server.js",
-    "importAll": " node dev-data/data/import-dev-data.js --import",
-    "deleteAll": " node dev-data/data/import-dev-data.js --delete",
+    "importAll": "npx node dev-data/data/import-dev-data.js --import",
+    "deleteAll": "npx node dev-data/data/import-dev-data.js --delete",
     "debug": "ndb server.js",
     "watch:js": "parcel watch public/js/index.js --hmr-port 1234 --out-dir public/js/bundled --out-file bundle.js",
     "build:js": "parcel build public/js/index.js --out-dir public/js/bundled --out-file bundle.js"
