@@ -4,13 +4,10 @@ import { showAlert } from "./alert";
 
 export const login = async (email, password) => {
   try {
-    const res = await axios.post(
-      `${req.protocol}://${req.get("host")}/api/v1/users/login`,
-      {
-        email,
-        password,
-      }
-    );
+    const res = await axios.post(`/api/v1/users/login`, {
+      email,
+      password,
+    });
     if (res.data.status === "Success") {
       showAlert("success", "You have successfully logged in!");
       window.setTimeout(() => {
@@ -24,10 +21,8 @@ export const login = async (email, password) => {
 
 export const logout = async () => {
   try {
-    const res = await axios.get(
-      `${req.protocol}://${req.get("host")}/api/v1/users/logout`
-    );
-    if (res.data.status === "Success") location.reload(true);
+    const res = await axios.get(`/api/v1/users/logout`);
+    if (res.data.status === "Success") location.replace("/");
   } catch (err) {
     showAlert("error", "Error logging out! Try again.");
   }

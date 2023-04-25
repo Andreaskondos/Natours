@@ -10,9 +10,7 @@ import { showAlert } from "./alert";
 export const bookTour = async (tourId) => {
   try {
     const session = await axios.get(
-      `${req.protocol}://${req.get(
-        "host"
-      )}/api/v1/bookings/checkout-session/${tourId}`
+      `/api/v1/bookings/checkout-session/${tourId}`
     );
 
     // await stripe.redirectToCheckout({
