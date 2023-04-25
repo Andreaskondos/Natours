@@ -8,8 +8,8 @@
     "importAll": "npx node dev-data/data/import-dev-data.js --import",
     "deleteAll": "npx node dev-data/data/import-dev-data.js --delete",
     "debug": "ndb server.js",
-    "watch:js": "parcel watch public/js/index.js --hmr-port 1234 --out-dir public/js/bundled --out-file bundle.js",
-    "build:js": "parcel build public/js/index.js --out-dir public/js/bundled --out-file bundle.js"
+    "watch:js": "npx parcel watch public/js/index.js --hmr-port 1234 --out-dir public/js/bundled --out-file bundle.js",
+    "build:js": "npx parcel build public/js/index.js --out-dir public/js/bundled --out-file bundle.js"
   },
   "author": "Ledgic",
   "license": "ISC",
