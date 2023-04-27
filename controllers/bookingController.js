@@ -27,7 +27,7 @@ exports.checkoutSession = catchAsync(async (req, res, next) => {
             name: `${tour.name} Tour`,
             description: tour.summary,
             images: [
-              `https://natours-ledgic.netlify.app/img/tours/${tour.imageCover}`,
+              `https://natours-ledgic.onrender.com/img/tours/${tour.imageCover}`,
             ],
           },
         },
