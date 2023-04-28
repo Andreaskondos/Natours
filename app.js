@@ -15,9 +15,12 @@ const tourRouter = require("./routes/tourRoutes");
 const userRouter = require("./routes/userRoutes");
 const reviewRouter = require("./routes/reviewRoutes");
 const bookingRouter = require("./routes/bookingRoutes");
+const bookingController = require("./controllers/bookingController");
 const viewRouter = require("./routes/viewRoutes");
 
 const app = express();
+
+// app.enable("trust proxy");
 
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
@@ -80,7 +83,14 @@ const limiter = rateLimit({
 });
 app.use("/api", limiter);
 
-// Body parser, reading data from body into req.body
+//Stripe needs raw body and not in JSON form so we add here the webhook requests
+app.post(
+  "/webhook-checkout",
+  express.raw({ type: "application/json" }),
+  bookingController.webhookCheckout
+);
+
+// Body parser, reading / passing data from body into req.body
 app.use(express.json({ limit: "10kb" }));
 app.use(express.urlencoded({ extended: true, limit: "10kb" }));
 app.use(cookieParser());
@@ -110,6 +120,13 @@ app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
   //   console.log(req.cookies);
   next();
+});
+
+app.use((req, res, next) => {
+  const { alert } = req.query;
+  if (alert === "bookingOk")
+    res.locals.alert =
+      "Your booking has been completed successfully. Please check your email for confirmation. If your booking doesn't show up here, check again later! ";
 });
 
 app.use(compression());

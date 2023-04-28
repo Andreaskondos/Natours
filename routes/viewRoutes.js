@@ -12,7 +12,7 @@ router.get(
 );
 
 router.use(authController.isLoggedIn);
-router.get("/", bookingController.addBooking, viewController.getOverview);
+router.get("/", viewController.getOverview);
 router.get("/tour/:slug", viewController.getTour);
 router.get("/login", viewController.loginScreen);
 

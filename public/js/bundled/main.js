@@ -125,11 +125,11 @@ const hideAlert = () => {
   if (alert) alert.parentElement.removeChild(alert);
 };
 
-const showAlert = function (type, text) {
+const showAlert = function (type, text, time = 6) {
   hideAlert();
   const markup = `<div class="alert alert--${type}">${text}</div>`;
   document.body.insertAdjacentHTML("afterbegin", markup);
-  window.setTimeout(hideAlert, 5000);
+  window.setTimeout(hideAlert, time * 1000);
 };
 
 
@@ -12850,9 +12850,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _login__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 /* harmony import */ var _updateSettings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(45);
 /* harmony import */ var _stripe__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(46);
-/* harmony import */ var _babel_polyfill__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(47);
-/* harmony import */ var _babel_polyfill__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_polyfill__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _alert__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
+/* harmony import */ var _babel_polyfill__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(47);
+/* harmony import */ var _babel_polyfill__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_polyfill__WEBPACK_IMPORTED_MODULE_5__);
 /* eslint-disable */
+
 
 
 
@@ -12924,6 +12926,9 @@ if (bookBtn)
     const { tourId } = e.target.dataset;
     (0,_stripe__WEBPACK_IMPORTED_MODULE_3__.bookTour)(tourId);
   });
+
+const alertMessage = document.querySelector("body").dataset.alert;
+if (alertMessage) (0,_alert__WEBPACK_IMPORTED_MODULE_4__.showAlert)("success", alertMessage, 10);
 
 })();
 
