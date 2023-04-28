@@ -127,6 +127,7 @@ app.use((req, res, next) => {
   if (alert === "bookingOk")
     res.locals.alert =
       "Your booking has been completed successfully. Please check your email for confirmation. If your booking doesn't show up here, check again later! ";
+  next();
 });
 
 app.use(compression());
