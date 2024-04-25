@@ -9,7 +9,7 @@
     "importAll": "npx node dev-data/data/import-dev-data.js --import",
     "deleteAll": "npx node dev-data/data/import-dev-data.js --delete",
     "debug": "ndb server.js",
-    "build:js": "npx webpack"
+    "build": "npx webpack"
   },
   "author": "Ledgic",
   "license": "ISC",

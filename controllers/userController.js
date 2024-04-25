@@ -16,7 +16,7 @@ const handlerFactory = require("./handlerFactory");
 //   },
 // });
 
-//IF WE HAVE ANY IMAGE PROCESSING, CAUSE LATER WE SET THE FILE SAVE LOCATION VIA SHARP(REQ.FILE.BUFFER).TOFILE("DESTINATION")
+//IF WE HAVE ANY IMAGE PROCESSING, CAUSE LATER WE SET THE FILE SAVE LOCATION VIA sharp(req.file.buffer).toFile("DESTINATION")
 const multerStorage = multer.memoryStorage();
 
 const multerFilter = (req, file, cb) => {
