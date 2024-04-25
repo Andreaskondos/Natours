@@ -37,17 +37,20 @@ const scriptSrcUrls = [
   "https://unpkg.com/",
   "https://tile.openstreetmap.org",
   "https://js.stripe.com",
+  "https://https://andreas-kontos.vercel.app",
   // "https://cdnjs.cloudflare.com",
 ];
 const styleSrcUrls = [
   "https://unpkg.com/",
   "https://tile.openstreetmap.org",
   "https://fonts.googleapis.com/",
+  "https://https://andreas-kontos.vercel.app",
   // "https://js.stripe.com",
 ];
 const connectSrcUrls = [
   "https://unpkg.com",
   "https://tile.openstreetmap.org",
+  "https://https://andreas-kontos.vercel.app",
   "ws://127.0.0.1:1234/",
   "*.stripe.com",
   "*.stripe.network",
