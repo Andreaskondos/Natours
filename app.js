@@ -110,7 +110,7 @@ app.use(cookieParser());
 app.use(mongoSanitize());
 
 // Data sanitization against XSS
-app.use(xss());
+// app.use(xss());
 
 // Prevent parameter pollution
 app.use(
