@@ -75,6 +75,8 @@ app.use(
         "https://andreas-kontos.vercel.app/projects/natours-fullstack",
       ],
     },
+    crossOriginResourcePolicy: false,
+    crossOriginOpenerPolicy: false,
     framegaurd: false,
   })
 );
