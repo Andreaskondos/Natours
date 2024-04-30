@@ -1,11 +1,11 @@
 const path = require("path");
 const express = require("express");
 const morgan = require("morgan");
-const rateLimit = require("express-rate-limit");
-const helmet = require("helmet");
+// const rateLimit = require("express-rate-limit");
+// const helmet = require("helmet");
 const mongoSanitize = require("express-mongo-sanitize");
-const xss = require("xss-clean");
-const hpp = require("hpp");
+// const xss = require("xss-clean");
+// const hpp = require("hpp");
 const cookieParser = require("cookie-parser");
 const compression = require("compression");
 
@@ -33,29 +33,29 @@ app.use(express.static(path.join(__dirname, "public")));
 // app.use(helmet());
 
 //HELMET CONFIGURATION
-const scriptSrcUrls = [
-  "https://unpkg.com/",
-  "https://tile.openstreetmap.org",
-  "https://js.stripe.com",
-  "https://andreas-kontos.vercel.app",
-  // "https://cdnjs.cloudflare.com",
-];
-const styleSrcUrls = [
-  "https://unpkg.com/",
-  "https://tile.openstreetmap.org",
-  "https://fonts.googleapis.com/",
-  "https://andreas-kontos.vercel.app",
-  // "https://js.stripe.com",
-];
-const connectSrcUrls = [
-  "https://unpkg.com",
-  "https://tile.openstreetmap.org",
-  "https://andreas-kontos.vercel.app",
-  "ws://127.0.0.1:1234/",
-  "*.stripe.com",
-  "*.stripe.network",
-];
-const fontSrcUrls = ["fonts.googleapis.com", "fonts.gstatic.com"];
+// const scriptSrcUrls = [
+//   "https://unpkg.com/",
+//   "https://tile.openstreetmap.org",
+//   "https://js.stripe.com",
+//   "https://andreas-kontos.vercel.app",
+//   // "https://cdnjs.cloudflare.com",
+// ];
+// const styleSrcUrls = [
+//   "https://unpkg.com/",
+//   "https://tile.openstreetmap.org",
+//   "https://fonts.googleapis.com/",
+//   "https://andreas-kontos.vercel.app",
+//   // "https://js.stripe.com",
+// ];
+// const connectSrcUrls = [
+//   "https://unpkg.com",
+//   "https://tile.openstreetmap.org",
+//   "https://andreas-kontos.vercel.app",
+//   "ws://127.0.0.1:1234/",
+//   "*.stripe.com",
+//   "*.stripe.network",
+// ];
+// const fontSrcUrls = ["fonts.googleapis.com", "fonts.gstatic.com"];
 
 // app.use(
 //   helmet.contentSecurityPolicy({
@@ -107,24 +107,24 @@ app.use(express.urlencoded({ extended: true, limit: "10kb" }));
 app.use(cookieParser());
 
 // Data sanitization against NoSQL query injection
-app.use(mongoSanitize());
+// app.use(mongoSanitize());
 
 // Data sanitization against XSS
 // app.use(xss());
 
 // Prevent parameter pollution
-app.use(
-  hpp({
-    whitelist: [
-      "duration",
-      "ratingsQuantity",
-      "ratingsAverage",
-      "maxGroupSize",
-      "difficulty",
-      "price",
-    ],
-  })
-);
+// app.use(
+//   hpp({
+//     whitelist: [
+//       "duration",
+//       "ratingsQuantity",
+//       "ratingsAverage",
+//       "maxGroupSize",
+//       "difficulty",
+//       "price",
+//     ],
+//   })
+// );
 
 // Test middleware
 app.use((req, res, next) => {
