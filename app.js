@@ -57,29 +57,29 @@ const connectSrcUrls = [
 ];
 const fontSrcUrls = ["fonts.googleapis.com", "fonts.gstatic.com"];
 
-app.use(
-  helmet.contentSecurityPolicy({
-    directives: {
-      defaultSrc: [],
-      connectSrc: ["'self'", ...connectSrcUrls],
-      scriptSrc: ["'self'", ...scriptSrcUrls],
-      styleSrc: ["'self'", "'unsafe-inline'", ...styleSrcUrls],
-      workerSrc: ["'self'", "blob:"],
-      objectSrc: [],
-      imgSrc: ["'self'", "blob:", "data:", "https:"],
-      fontSrc: ["'self'", ...fontSrcUrls],
-      frameSrc: [
-        "*.stripe.com",
-        "*.stripe.network",
-        "https://andreas-kontos.vercel.app",
-        "https://andreas-kontos.vercel.app/projects/natours-fullstack",
-      ],
-    },
-    crossOriginResourcePolicy: false,
-    crossOriginOpenerPolicy: false,
-    framegaurd: false,
-  })
-);
+// app.use(
+//   helmet.contentSecurityPolicy({
+//     directives: {
+//       defaultSrc: [],
+//       connectSrc: ["'self'", ...connectSrcUrls],
+//       scriptSrc: ["'self'", ...scriptSrcUrls],
+//       styleSrc: ["'self'", "'unsafe-inline'", ...styleSrcUrls],
+//       workerSrc: ["'self'", "blob:"],
+//       objectSrc: [],
+//       imgSrc: ["'self'", "blob:", "data:", "https:"],
+//       fontSrc: ["'self'", ...fontSrcUrls],
+//       frameSrc: [
+//         "*.stripe.com",
+//         "*.stripe.network",
+//         "https://andreas-kontos.vercel.app",
+//         "https://andreas-kontos.vercel.app/projects/natours-fullstack",
+//       ],
+//     },
+//     crossOriginResourcePolicy: false,
+//     crossOriginOpenerPolicy: false,
+//     framegaurd: false,
+//   })
+// );
 //////////////////////////////
 // Development logging
 if (process.env.NODE_ENV === "development") {
